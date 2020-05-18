@@ -8,8 +8,10 @@ public class LeapYear {
     public boolean isLeapYear(short year){
         if(isValidYear(year)){
             if(isDivisibleYearDivisibleBy4NotBy100(year)){
-                    return true;
-            }else return false;
+                return true;
+            } if (isDivisibleYearDivisibleBy100NotBy400(year)){
+                return true;
+            } return false;
         }else return false;
     }
 
@@ -31,6 +33,15 @@ public class LeapYear {
             }else return false;
         }else return false;
     }
+
+    public boolean isDivisibleYearDivisibleBy100NotBy400(short year){
+        if(isYearDivisibleBy100(year)){
+            if(!isYearDivisibleBy400(year)){
+                return false;
+            }else return true;
+        }else return false;
+    }
+
 
     public boolean isYearDivisibleBy4(short year){
         System.out.println("year%4="+(year % 4));

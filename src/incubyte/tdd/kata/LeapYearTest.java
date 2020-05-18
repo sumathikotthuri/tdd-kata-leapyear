@@ -8,21 +8,15 @@ import org.junit.runners.JUnit4;
 public class LeapYearTest {
 
     LeapYear lp = new LeapYear();
-    public final static short YEAR = 2050;
+
 
     @Test
     public void testIsItValidYear(){
-         Assert.assertEquals(true,lp.isValidYear(YEAR));
+        Assert.assertEquals(true,lp.isValidYear((short)2345));
+        Assert.assertEquals(false,lp.isValidYear((short)17989));
+        Assert.assertEquals(false,lp.isValidYear((short)78));
+        Assert.assertEquals(false,lp.isValidYear((short)0));
     }
 
-    @Test
-    public void testIsDivisibleBy4(){
-        Assert.assertEquals(true,lp.isYearDivisibleBy4(YEAR));
-    }
-
-    @Test
-    public void testIsDivisibleBy4ButNotBy100(){
-        Assert.assertEquals(true,lp.isDivisibleYearDivisibleBy4NotBy100(YEAR) );
-    }
 
 }
