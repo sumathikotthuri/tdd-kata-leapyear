@@ -8,12 +8,10 @@ public class LeapYear {
     public boolean isLeapYear(short year){
         if(isValidYear(year)){
             if(isYearDivisibleBy4(year)){
-                return true;
-            }else{
                 if(isDivisibleYearDivisibleNotBy100By400(year)){
                     return true;
                 }else return false;
-            }
+            }else return false;
         }else return false;
     }
 
@@ -30,7 +28,7 @@ public class LeapYear {
 
     public boolean isDivisibleYearDivisibleNotBy100By400(short year){
         if(!isYearDivisibleBy100(year)){
-            return true;
+          return true;
         }else if(isYearDivisibleBy400(year)){
             return true;
         }else  return false;

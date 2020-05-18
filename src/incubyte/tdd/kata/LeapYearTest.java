@@ -37,4 +37,15 @@ public class LeapYearTest {
         Assert.assertEquals(false,lp.isDivisibleYearDivisibleNotBy100By400((short)1900));
     }
 
+
+    @Test
+    public void testIsYearLeapYear(){
+        Assert.assertEquals(true,lp.isLeapYear((short)2000));
+        Assert.assertEquals(false,lp.isLeapYear((short)2002));
+        Assert.assertEquals(true,lp.isLeapYear((short)2012));
+        Assert.assertEquals(false,lp.isLeapYear((short)1800));
+        Assert.assertEquals(true,lp.isLeapYear((short)2016));
+        Assert.assertEquals(true,lp.isLeapYear((short)2044));
+    }
+
 }
